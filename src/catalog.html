@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<!--Подключение к head.html-->
+@include('partials/head.html')
+
+<body>
+  <!--Подключение к header_catalog.html-->
+  @include('partials/catalog/header-catalog.html')
+  <!--Main content-->
+  <main class="main">
+    <!--Подключение к left-catalog.html-->
+    @include('partials/catalog/left-catalog.html')
+    <!--Подключение к right-catalog.html-->
+    @include('partials/catalog/right-catalog.html')
+  </main>
+  <!--Подключение к footer.html-->
+  @include('partials/footer.html')
+</body>
+
+</html>
