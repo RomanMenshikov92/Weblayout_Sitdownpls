@@ -1,0 +1,194 @@
+.footer {
+  &__top {
+    background-color: $color-middle-gray;
+
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 25px 0 21px;
+    }
+
+    &-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-logo {
+      margin-bottom: 30px;
+      font-size: 0;
+    }
+
+    &-list-social {
+      display: flex;
+      gap: 20px;
+    }
+
+    &-link-social {
+      position: relative;
+      z-index: 11;
+      display: inline-block;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: -4px;
+        z-index: -11;
+
+        @include transition((background-color), 0.3s, ease-in);
+      }
+
+      &-icon {
+        width: 30px;
+        height: 30px;
+        fill: $color-gray;
+
+        @include transition((fill), 0.4s, ease);
+      }
+
+      &:focus-visible:not(:hover, :active) {
+        &::after {
+          background-color: $color-light-primary;
+        }
+
+        .footer__top-link-social-icon {
+          fill: $color-white;
+        }
+      }
+
+      &:hover {
+        .footer__top-link-social-icon {
+          fill: $color-primary;
+        }
+      }
+
+      &:active {
+        .footer__top-link-social-icon {
+          fill: $color-dark-primary;
+        }
+      }
+    }
+
+    &-nav {
+      display: flex;
+      margin-top: 1px;
+    }
+
+    &-block {
+      &:nth-child(1) {
+        margin-right: 112px;
+      }
+
+      &:nth-child(2) {
+        margin-right: 133px;
+      }
+
+      &:nth-child(3) {
+        margin-right: 146px;
+      }
+
+      &-title {
+        margin-bottom: 10px;
+        font-weight: $fontWeight-Regular;
+
+        @include fontSize-lineHeight(16px, 100%);
+
+        color: $color-black;
+
+        &-link {
+          position: relative;
+          z-index: 11;
+
+          @include transition((color), 0.3s, ease-in);
+
+          &::after {
+            content: "";
+            position: absolute;
+            inset: -1px -10px;
+            z-index: -11;
+
+            @include transition((background-color), 0.3s, ease-in);
+          }
+
+          &:focus-visible:not(:hover, :active) {
+            color: $color-black;
+
+            &::after {
+              background-color: $color-pink-violet;
+            }
+          }
+
+          &:hover {
+            color: $color-primary;
+          }
+
+          &:active {
+            color: $color-dark-primary;
+          }
+        }
+      }
+
+      &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      &-item {
+        font-weight: $fontWeight-Regular;
+
+        @include fontSize-lineHeight(14px, 100%);
+
+        color: $color-gray;
+
+        &-link {
+          position: relative;
+          z-index: 11;
+
+          @include transition((color), 0.3s, ease-in);
+
+          &::after {
+            content: "";
+            position: absolute;
+            inset: -1px -10px;
+            z-index: -11;
+
+            @include transition((background-color), 0.3s, ease-in);
+          }
+
+          &:focus-visible:not(:hover, :active) {
+            color: $color-dark-primary;
+
+            &::after {
+              background-color: $color-pink-violet;
+            }
+          }
+
+          &:hover {
+            color: $color-primary;
+          }
+
+          &:active {
+            color: $color-dark-primary;
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    background-color: $color-light-gray;
+
+    &-container {
+      padding: 5px 0;
+      text-align: center;
+    }
+
+    &-copywriting {
+      font-weight: $fontWeight-Regular;
+
+      @include fontSize-lineHeight(14px, normal);
+
+      color: $color-gray;
+    }
+  }
+}

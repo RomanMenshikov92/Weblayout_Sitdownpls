@@ -1,0 +1,126 @@
+.high-rating {
+  margin-bottom: 70px;
+
+  &__title {
+    margin-bottom: 26px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  &__block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    border-radius: 10px;
+    padding: 30px;
+    min-height: 420px;
+    background-color: $color-light-gray;
+
+    @include transition((background-color), 0.3s, ease-out);
+
+    &-link {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px;
+      height: 100%;
+    }
+
+    &:nth-child(3) {
+      padding: 0;
+
+      &:focus:not(:hover, :active) {
+        background-color: $color-light-gray;
+      }
+
+      &:hover {
+        background-color: $color-gray;
+      }
+
+      &:active {
+        background-color: $color-dark-gray;
+      }
+    }
+  }
+
+  &__status-rating {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    display: inline-flex;
+    align-items: center;
+    font-weight: $fontWeight-Regular;
+    color: $color-orange;
+    gap: 10px;
+
+    @include fontSize-lineHeight(16px, 130%);
+
+    &-icon {
+      width: 15px;
+      height: 15px;
+      fill: $color-orange;
+    }
+  }
+
+  &__picture {
+    align-self: center;
+    margin: 0 -15px 13px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  &__subtitle {
+    @include fontSize-lineHeight(24px, 130%);
+
+    font-weight: $fontWeight-Regular;
+    color: $color-black;
+  }
+
+  &__price {
+    @include fontSize-lineHeight(16px, 130%);
+
+    font-weight: $fontWeight-Regular;
+    color: $color-dark-gray;
+  }
+
+  &__btn {
+    border: 2px solid $color-primary;
+    border-radius: 10px;
+    padding: 17px 33px;
+    font-weight: $fontWeight-SemiBold;
+    text-align: center;
+    color: $color-primary;
+
+    @include fontSize-lineHeight(16px, 100%);
+    @include transition((border-color background-color color), 0.3s, ease-out);
+
+    &:focus-visible:not(:hover, :active) {
+      border-color: $color-dark-primary;
+      color: $color-white;
+      background-color: $color-light-primary;
+    }
+
+    &:hover {
+      border-color: $color-primary;
+      color: $color-white;
+      background-color: $color-primary;
+    }
+
+    &:active {
+      border-color: $color-dark-primary;
+      color: $color-white;
+      background-color: $color-dark-primary;
+    }
+  }
+}

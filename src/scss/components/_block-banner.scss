@@ -1,0 +1,69 @@
+.block-banner {
+  margin-bottom: 70px;
+
+  @include background(
+    url("../../img/1920/new_collection-banner.jpg"),
+    center,
+    no-repeat,
+    cover
+  );
+
+  &__container {
+    padding: 153px 0 150px;
+  }
+
+  &__title {
+    width: 100%;
+    max-width: 508px;
+    font-family: $fontFamily-PlayfairDisplay;
+    font-weight: $fontWeight-Black;
+    color: $color-gold;
+
+    @include fontSize-lineHeight(60px, 120%);
+  }
+
+  &__description {
+    margin: 0;
+    margin-bottom: 49px;
+    width: 100%;
+    max-width: 508px;
+    font-weight: $fontWeight-Regular;
+    color: $color-white;
+
+    @include fontSize-lineHeight(48px, 119%);
+  }
+
+  &__btn {
+    border: 2px solid $color-primary;
+    border-radius: 10px;
+    padding: 20px 30px;
+    font-weight: $fontWeight-Bold;
+    text-align: center;
+    color: $color-white;
+    background-color: $color-primary;
+
+    @include fontSize-lineHeight(16px, 100%);
+    @include transition((border-color background-color color), 0.4s, ease);
+
+    &:focus-visible:not(:hover, :active) {
+      border-color: $color-dark-primary;
+      background-color: $color-light-primary;
+    }
+
+    &:hover {
+      border-color: $color-light-primary;
+      background-color: $color-light-primary;
+    }
+
+    &:active {
+      border-color: $color-dark-primary;
+      background-color: $color-dark-primary;
+    }
+
+    &:disabled {
+      border-color: $color-middle-gray;
+      color: $color-gray;
+      background-color: $color-middle-gray;
+    }
+  }
+}

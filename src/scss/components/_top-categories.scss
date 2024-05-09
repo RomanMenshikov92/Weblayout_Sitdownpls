@@ -1,0 +1,203 @@
+.top-categories {
+  margin-bottom: 70px;
+
+  &__title {
+    margin-bottom: 26px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-auto-rows: 511px 405px;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      padding: 30px;
+      background-color: $color-light-gray;
+
+      &--sofas {
+        grid-column: 6 span;
+
+        @include background(
+          url("../../img/1920/category_sofa.png"),
+          0% 60%,
+          no-repeat,
+          auto
+        );
+      }
+
+      &--armchairs {
+        grid-column: 6 span;
+
+        @include background(
+          url("../../img/1920/category_armchair.png"),
+          0% 60%,
+          no-repeat,
+          auto
+        );
+      }
+
+      &--beds {
+        grid-column: 4 span;
+
+        @include background(
+          url("../../img/1920/category_bed.png"),
+          0% 60%,
+          no-repeat,
+          auto
+        );
+      }
+
+      &--dressers {
+        grid-column: 4 span;
+
+        @include background(
+          url("../../img/1920/category_dresser.png"),
+          0% 60%,
+          no-repeat,
+          auto
+        );
+      }
+
+      &--chairs {
+        grid-column: 4 span;
+
+        @include background(
+          url("../../img/1920/category_chair.png"),
+          0% 60%,
+          no-repeat,
+          auto
+        );
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    gap: 30px;
+  }
+
+  &__item {
+    font-weight: $fontWeight-Regular;
+
+    @include fontSize-lineHeight(14px, 100%);
+
+    color: $color-gray;
+  }
+
+  &__subtitle {
+    font-weight: $fontWeight-Regular;
+
+    @include fontSize-lineHeight(24px, normal);
+
+    color: $color-black;
+  }
+
+  &__link {
+    position: relative;
+    z-index: 11;
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    margin-top: auto;
+    font-weight: $fontWeight-Bold;
+    color: $color-primary;
+    gap: 5px;
+
+    @include fontSize-lineHeight(16px, 120%);
+    @include transition((color), 0.3s, ease-in);
+
+    &-span {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        z-index: -11;
+        border-bottom: 2px solid transparent;
+        width: 100%;
+
+        @include transition((border-color), 0.3s, ease-in);
+      }
+    }
+
+    &-circle-icon {
+      width: 22px;
+      height: 22px;
+      fill: transparent;
+      stroke: $color-primary;
+      stroke-width: 2;
+
+      @include transition((fill stroke), 0.4s, ease);
+    }
+
+    &-arrow-icon {
+      position: absolute;
+      left: 94px;
+      top: 6px;
+      width: 5px;
+      height: 10px;
+      fill: transparent;
+      stroke: $color-primary;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2;
+
+      @include transition((fill stroke), 0.4s, ease);
+    }
+
+    &:focus-visible:not(:hover, :active) {
+      .top-categories__link-span::after {
+        border-color: $color-primary;
+      }
+
+      .top-categories__link-circle-icon {
+        fill: $color-light-primary;
+        stroke: $color-primary;
+      }
+
+      .top-categories__link-arrow-icon {
+        stroke: $color-white;
+      }
+    }
+
+    &:hover {
+      .top-categories__link-span::after {
+        border-color: $color-primary;
+      }
+
+      .top-categories__link-circle-icon {
+        fill: $color-primary;
+        stroke: $color-primary;
+      }
+
+      .top-categories__link-arrow-icon {
+        stroke: $color-white;
+      }
+    }
+
+    &:active {
+      color: $color-dark-primary;
+
+      .top-categories__link-span::after {
+        border-color: $color-dark-primary;
+      }
+
+      .top-categories__link-circle-icon {
+        fill: $color-dark-primary;
+        stroke: $color-dark-primary;
+      }
+
+      .top-categories__link-arrow-icon {
+        stroke: $color-white;
+      }
+    }
+  }
+}

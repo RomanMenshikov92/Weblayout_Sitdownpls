@@ -1,11 +1,12 @@
-import { throttle } from './throttle';
-const fixFullheight = () => {
-  let vh = window.innerHeight;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-};
+// import { throttle } from "./throttle.js";
 
-let fixHeight = throttle(fixFullheight);
+// const fixFullheight = () => {
+//   let vh = window.innerHeight;
+//   document.documentElement.style.setProperty("--vh", `${vh}px`);
+// };
 
-fixHeight();
+// let fixHeight = throttle(fixFullheight);
 
-window.addEventListener('resize', fixHeight);
+// fixHeight();
+
+// window.addEventListener("resize", fixHeight);

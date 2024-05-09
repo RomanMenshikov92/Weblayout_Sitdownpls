@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  <!--Подключение к head.html-->
+  @include('partials/head.html')
+
+  <body class="page__body page__body--product">
+    <!--Подключение к header.html-->
+    @include('partials/header.html')
+    <!--Main content-->
+    <main class="main">
+      <!--Подключение к breadcrumbs.html-->
+      @include('partials/product/breadcrumbs.html')
+      <!--Подключение к content-product.html-->
+      @include('partials/product/content.html')
+      <!--Подключение к aside-product.html-->
+      @include('partials/product/aside.html')
+    </main>
+    <!--Подключение к footer.html-->
+    @include('partials/footer.html')
+  </body>
+</html>

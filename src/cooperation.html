@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="page">
+  <!--Подключение к head.html-->
+  @include('partials/head.html')
 
-<!--Подключение к head.html-->
-@include('partials/head.html')
-
-<body>
-  <!--Подключение к header_product.html-->
-  @include('partials/cooperation/header-cooperation.html')
-  <!--Main content-->
-  <main class="main">
-    <!--Подключение к intro-cooperation.html-->
-    @include('partials/cooperation/intro-cooperation.html')
-    <!--Подключение к advantage-cooperation.html-->
-    @include('partials/cooperation/advantage-cooperation.html')
-  </main>
-  <!--Подключение к footer.html-->
-  @include('partials/footer.html')
-</body>
-
+  <body class="page__body page__body--cooperation">
+    <!--Подключение к header.html-->
+    @include('partials/header.html')
+    <!--Main content-->
+    <main class="main">
+      <!--Подключение к breadcrumbs.html-->
+      @include('partials/cooperation/breadcrumbs.html')
+      <!--Подключение к сooperation-with-suppliers.html-->
+      @include('partials/cooperation/сooperation-with-suppliers.html')
+    </main>
+    <!--Подключение к footer.html-->
+    @include('partials/footer.html')
+  </body>
 </html>

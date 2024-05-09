@@ -1,51 +1,137 @@
 <header class="header">
   <div class="header__top">
-    <div class="header__container container">
-      <select name="" id="">
-        <option value="">Москва</option>
-        <option value="">Казань</option>
-        <option value="">Уфа</option>
-        <option value="">Пермь</option>
-      </select>
-      <a class="header__number-tel" href="tel:+74958854547">+7(495)885-45-47</a>
+    <div class="header__top-container container">
+      <a
+        class="header__top-tel"
+        aria-label="Номер телефона"
+        href="tel:+74958854547"
+      >
+        <span class="visually-hidden">Открыть телефон</span>
+        <svg class="header__top-tel-icon" aria-hidden="true">
+          <use xlink:href="img/sprite.svg#icon_call"></use>
+        </svg>
+        +7(495)885-45-47
+      </a>
       <nav class="header__top-nav">
-        <ul class="header__top-list">
-          <li class="header__top-item"><a href="#" class="header__top-link">О компании</a></li>
-          <li class="header__top-item"><a href="#" class="header__top-link">Гарантия и возврат</a></li>
-          <li class="header__top-item"><a href="#" class="header__top-link">Корпоративным клиентам</a></li>
-          <li class="header__top-item"><a href="#" class="header__top-link">Дизайн-решение</a></li>
+        <ul class="header__top-list list-reset">
+          <li class="header__top-item">
+            <a href="/" class="header__top-link">О компании</a>
+          </li>
+          <li class="header__top-item">
+            <a href="/" class="header__top-link">Гарантия и возврат</a>
+          </li>
+          <li class="header__top-item">
+            <a href="/" class="header__top-link">Корпоративным клиентам</a>
+          </li>
+          <li class="header__top-item">
+            <a href="/" class="header__top-link">Дизайн-решение</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="header__middle">
+    <div class="header__middle-container container">
+      <a href="/" class="header__middle-logo" aria-label="Логотип SitDownPls">
+        <img
+          class="header__middle=logo-img"
+          src="../img/logo.svg"
+          alt="Логотип SitDownPls"
+        />
+      </a>
+      <nav class="header__middle-nav">
+        <ul class="header__middle-list list-reset">
+          <li class="header__middle-item">
+            <a href="catalog.html" class="header__middle-link">Каталог</a>
+          </li>
+          <li class="header__middle-item">
+            <a href="/" class="header__middle-link">Магазины</a>
+          </li>
+          <li class="header__middle-item">
+            <a href="/" class="header__middle-link">Шоу-рум</a>
+          </li>
+          <li class="header__middle-item">
+            <a href="/" class="header__middle-link">Доставка и оплата</a>
+          </li>
+          <li class="header__middle-item">
+            <a href="/" class="header__middle-link">Дисконт</a>
+          </li>
+          <li class="header__middle-item">
+            <a href="/" class="header__middle-link">Контакты</a>
+          </li>
         </ul>
       </nav>
     </div>
   </div>
   <div class="header__bottom">
-    <div class="header__container container">
-      <a href="#" class="header__logo" aria-label="Логотип SitDownPls">
-        <picture class="header__picture">
-          <source media="(min-width: )" srcset="">
-          <img class="header__logo-img" src="/img/logo.svg" alt="Логотип SitDownPls">
-        </picture>
-      </a>
-      <nav class="header__bottom-nav">
-        <ul class="header__bottom-list">
-          <li class="header__bottom-item"><a href="#" class="header__bottom-link">Каталог</a></li>
-          <li class="header__bottom-item"><a href="#" class="header__bottom-link">Магазины</a></li>
-          <li class="header__bottom-item"><a href="#" class="header__bottom-link">Шоу-рум</a></li>
-          <li class="header__bottom-item"><a href="#" class="header__bottom-link">Доставка и оплата</a></li>
-          <li class="header__bottom-item"><a href="#" class="header__bottom-link">Дисконт</a></li>
-          <li class="header__bottom-item"><a href="#" class="header__bottom-link">Контакты</a></li>
-        </ul>
-      </nav>
-      <form action="" class="header__form-search">
-        <button class="header__btn-search1"></button>
-        <input class="header__input-search" type="text" placeholder="Я хочу купить...">
-        <button class="header__btn-search2"></button>
+    <div class="header__bottom-container container">
+      <form
+        action="/"
+        method="POST"
+        class="header__bottom-form"
+        aria-label="Форма поиска"
+      >
+        <label for="input-search">
+          <input
+            class="header__bottom-input input-reset"
+            id="input-search"
+            type="text"
+            aria-label="Введете в поиске"
+            placeholder="Я хочу купить..."
+            onmouseout="this.blur();"
+            autocomplete="off"
+          />
+        </label>
+        <span class="header__bottom-span">
+          <span class="visually-hidden">Кнопка поиск</span>
+          <svg
+            aria-label="Поиск на сайте"
+            role="button"
+            class="header__bottom-span-icon"
+            aria-hidden="true"
+          >
+            <use xlink:href="img/sprite.svg#icon_search-mini"></use>
+          </svg>
+        </span>
+        <button type="button" aria-label="Начать поиск" class="header__bottom-btn btn-reset">
+          <span class="visually-hidden">Кнопка начать поиск</span>
+          <svg
+            class="header__bottom-btn-circle-icon"
+            aria-label="Поиск на сайте"
+            aria-hidden="true"
+            role="button"
+          >
+            <use xlink:href="img/sprite.svg#icon_circle"></use>
+          </svg>
+          <span class="visually-hidden">Кнопка начать поиск</span>
+          <svg
+            class="header__bottom-btn-arrow-icon"
+            aria-label="Поиск на сайте"
+            aria-hidden="true"
+            role="button"
+          >
+            <use xlink:href="img/sprite.svg#icon_arrow-right"></use>
+          </svg>
+        </button>
       </form>
-      <select name="" id="">
-        <option value="">Категория</option>
-      </select>
-      <a href="#" class="header__personal"></a>
-      <a href="#" class="header__backet"></a>
+      <div class="header__bottom-wrapper">
+        <a href="/" class="header__bottom-personal">
+          <span class="visually-hidden">Кнопка личный кабинет</span>
+          <svg class="header__bottom-personal-icon" aria-hidden="true">
+            <use xlink:href="img/sprite.svg#icon_user"></use>
+          </svg>
+        </a>
+        <a href="/" class="header__bottom-basket">
+          <span class="header__bottom-basket-text">0</span>
+          <span class="visually-hidden">Кнопка корзина</span>
+          <svg class="header__bottom-basket-ellipse-icon" aria-hidden="true">
+            <use xlink:href="img/sprite.svg#icon_ellipse-orange"></use>
+          </svg>
+          <svg class="header__bottom-basket-icon" aria-hidden="true">
+            <use xlink:href="img/sprite.svg#icon_basket"></use>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
 </header>

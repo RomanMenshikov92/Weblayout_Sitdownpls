@@ -1,0 +1,208 @@
+.product {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding-top: 15px;
+    padding-bottom: 1px;
+    gap: 32px;
+  }
+
+  &__info-left {
+    display: flex;
+    flex-direction: column;
+    grid-column: 6 span;
+
+    &-picture {
+      margin-bottom: 111px;
+    }
+
+    &-title {
+      margin-bottom: 8px;
+      font-weight: $fontWeight-SemiBold;
+
+      @include fontSize-lineHeight(16px, 100%);
+    }
+
+    &-description {
+      margin: 0;
+
+      @include fontSize-lineHeight(14px, 180%);
+
+      color: $color-black;
+
+      &--bottom {
+        margin-top: 7px;
+      }
+    }
+
+    &-schema {
+      display: flex;
+      margin-top: 105px;
+      gap: 32px;
+    }
+  }
+
+  &__info-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-column: 6 span;
+
+    &-top {
+      position: relative;
+    }
+
+    &-status-rating {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: inline-flex;
+      align-items: center;
+      font-weight: $fontWeight-Regular;
+      color: $color-orange;
+      gap: 10px;
+
+      @include fontSize-lineHeight(16px, 130%);
+
+      &-icon {
+        width: 15px;
+        height: 15px;
+        fill: $color-orange;
+      }
+    }
+
+    &-title {
+      margin-top: 23px;
+      margin-bottom: 5px;
+
+      @include fontSize-lineHeight(24px, 130%);
+    }
+
+    &-description {
+      margin: 0;
+      margin-bottom: 21px;
+
+      @include fontSize-lineHeight(14px, 100%);
+
+      color: $color-gray;
+    }
+
+    &-price {
+      margin-bottom: 21px;
+
+      @include fontSize-lineHeight(36px, 130%);
+
+      color: $color-black;
+    }
+
+    &-btn-buy {
+      display: block;
+      margin-bottom: 14px;
+      border: 2px solid $color-primary;
+      border-radius: 10px;
+      padding: 16px 33px;
+      font-weight: $fontWeight-SemiBold;
+      text-align: center;
+      color: $color-white;
+      background-color: $color-primary;
+
+      @include fontSize-lineHeight(16px, 100%);
+      @include transition((border-color background-color color), 0.4s, ease);
+
+      &:focus-visible:not(:hover, :active) {
+        border-color: $color-dark-primary;
+        background-color: $color-light-primary;
+      }
+
+      &:hover {
+        border-color: $color-light-primary;
+        background-color: $color-light-primary;
+      }
+
+      &:active {
+        border-color: $color-dark-primary;
+        background-color: $color-dark-primary;
+      }
+
+      &:disabled {
+        border-color: $color-middle-gray;
+        color: $color-gray;
+        background-color: $color-middle-gray;
+      }
+    }
+
+    &-btn-add {
+      position: relative;
+      z-index: 11;
+      display: block;
+      padding: 0 30px;
+
+      @include fontSize-lineHeight(16px, 130%);
+
+      color: $color-primary;
+
+      @include transition((color), 0.3s, ease-in);
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: -4px;
+        z-index: -11;
+
+        @include transition((background-color color), 0.3s, ease-in);
+      }
+
+      &:focus-visible:not(:hover, :active) {
+        color: $color-white;
+
+        &::after {
+          background-color: $color-dark-primary;
+        }
+      }
+
+      &:hover {
+        color: $color-light-primary;
+      }
+
+      &:active {
+        color: $color-dark-primary;
+      }
+    }
+
+    &-characteristic {
+      &-list {
+        margin-bottom: -3px;
+      }
+
+      &-item {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+      }
+
+      &-name {
+        grid-column: 3 span;
+
+        @include fontSize-lineHeight(14px, 180%);
+
+        color: $color-gray;
+
+        &::after {
+          content: "..............................................................................";
+          position: absolute;
+        }
+      }
+
+      &-description {
+        position: relative;
+        z-index: 11;
+        grid-column: 3 span;
+        margin-left: 16px;
+
+        @include fontSize-lineHeight(14px, 180%);
+
+        color: $color-black;
+        background-color: $color-white;
+      }
+    }
+  }
+}

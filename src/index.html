@@ -1,31 +1,29 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="page">
+  <!--Подключение к head.html-->
+  @include('partials/head.html')
 
-<!--Подключение к head.html-->
-@include('partials/head.html')
-
-<body>
-  <!--Подключение к header.html-->
-  @include('partials/header.html')
-  <!--Main content-->
-  <main class="main">
-    <!--Подключение к hero.html-->
-    @include('partials/main/hero.html')
-    <!--Подключение к special-offers.html-->
-    @include('partials/main/special-offers.html')
-    <!--Подключение к high-rating.html-->
-    @include('partials/main/high-rating.html')
-    <!--Подключение к new-collection.html-->
-    @include('partials/main/block-banner.html')
-    <!--Подключение к top-categories.html-->
-    @include('partials/main/top-categories.html')
-    <!--Подключение к useful.html-->
-    @include('partials/main/useful.html')
-    <!--Подключение к contact-form.html-->
-    @include('partials/main/contact-form.html')
-  </main>
-  <!--Подключение к footer.html-->
-  @include('partials/footer.html')
-</body>
-
+  <body class="page__body">
+    <!--Подключение к header.html-->
+    @include('partials/header.html')
+    <!--Main content-->
+    <main class="main">
+      <!--Подключение к hero.html-->
+      @include('partials/main/hero.html')
+      <!--Подключение к special-offers.html-->
+      @include('partials/main/special-offers.html')
+      <!--Подключение к high-rating.html-->
+      @include('partials/main/high-rating.html')
+      <!--Подключение к new-collection.html-->
+      @include('partials/main/block-banner.html')
+      <!--Подключение к top-categories.html-->
+      @include('partials/main/top-categories.html')
+      <!--Подключение к useful.html-->
+      @include('partials/main/useful.html')
+      <!--Подключение к contact-form.html-->
+      @include('partials/main/contact-form.html')
+    </main>
+    <!--Подключение к footer.html-->
+    @include('partials/footer.html')
+  </body>
 </html>

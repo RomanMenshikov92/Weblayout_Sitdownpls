@@ -1,0 +1,430 @@
+.header {
+  position: relative;
+  margin-bottom: 32px;
+
+  &__top {
+    background-color: $color-light-gray;
+
+    &-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+
+      @include laptop {
+        flex-direction: column;
+      }
+    }
+
+    &-tel {
+      position: relative;
+      z-index: 11;
+      display: flex;
+      align-items: center;
+      font-weight: $fontWeight-Regular;
+      letter-spacing: 0.7px;
+      color: $color-orange;
+
+      @include fontSize-lineHeight(14px, 100%);
+      @include transition((color), 0.3s, ease-in);
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: -4px;
+        z-index: -11;
+
+        @include transition((background-color), 0.3s, ease-in);
+      }
+
+      &-icon {
+        width: 22px;
+        height: 22px;
+        fill: $color-orange;
+
+        @include transition((fill), 0.3s, ease-in);
+      }
+
+      &:focus-visible:not(:hover, :active) {
+        &::after {
+          background-color: $color-sandy;
+        }
+      }
+
+      &:hover {
+        color: $color-light-orange;
+
+        .header__top-tel-icon {
+          fill: $color-light-orange;
+        }
+      }
+
+      &:active {
+        color: $color-dark-orange;
+
+        .header__top-tel-icon {
+          fill: $color-dark-orange;
+        }
+      }
+    }
+
+    &-list {
+      display: flex;
+      gap: 64px;
+    }
+
+    &-link {
+      position: relative;
+      z-index: 11;
+
+      @include fontSize-lineHeight(14px, 100%);
+
+      font-weight: $fontWeight-Regular;
+      color: $color-gray;
+
+      @include transition((color), 0.3s, ease-in);
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: -1px -10px;
+        z-index: -11;
+
+        @include transition((background-color), 0.3s, ease-in);
+      }
+
+      &:focus-visible:not(:hover, :active) {
+        color: $color-dark-primary;
+
+        &::after {
+          background-color: $color-pink-violet;
+        }
+      }
+
+      &:hover {
+        color: $color-primary;
+      }
+
+      &:active {
+        color: $color-dark-primary;
+      }
+    }
+  }
+
+  &__middle {
+    background-color: $color-white;
+
+    &-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 32px 0;
+    }
+
+    &-logo {
+      font-size: 0;
+    }
+
+    &-nav {
+      margin-top: 4px;
+    }
+
+    &-list {
+      display: flex;
+      gap: 92px;
+    }
+
+    &-link {
+      position: relative;
+      z-index: 11;
+
+      @include fontSize-lineHeight(16px, 100%);
+
+      font-weight: $fontWeight-Regular;
+      color: $color-black;
+
+      @include transition((color), 0.3s, ease-in);
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: -1px -10px;
+        z-index: -11;
+
+        @include transition((background-color), 0.3s, ease-in);
+      }
+
+      &:focus-visible:not(:hover, :active) {
+        color: $color-black;
+
+        &::after {
+          background-color: $color-pink-violet;
+        }
+      }
+
+      &:hover {
+        color: $color-primary;
+      }
+
+      &:active {
+        color: $color-dark-primary;
+      }
+    }
+  }
+
+  &__bottom {
+    background-color: $color-white;
+
+    &-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-form {
+      position: relative;
+      height: 100%;
+    }
+
+    &-input {
+      border: 2px solid transparent;
+      border-radius: 10px;
+      padding: 19px 56px;
+      width: 1061px;
+      background-color: $color-light-gray;
+
+      @include transition((border-color background-color), 0.3s, ease-in);
+
+      &::placeholder {
+        @include fontSize-lineHeight(16px, 120%);
+
+        font-weight: $fontWeight-Regular;
+        color: $color-gray;
+      }
+
+      &:focus-visible:not(:hover, :active) {
+        border-color: $color-primary;
+        background-color: $color-light-pink;
+      }
+
+      &:hover {
+        background-color: $color-middle-gray;
+
+        .header__bottom-span-icon {
+          fill: $color-primary;
+        }
+      }
+    }
+
+    &-span {
+      position: absolute;
+      left: 31px;
+      top: 20px;
+      z-index: 11;
+
+      &-icon {
+        width: 20px;
+        height: 20px;
+        fill: $color-gray;
+
+        @include transition((fill), 0.3s, ease-in);
+      }
+    }
+
+    &-btn {
+      position: absolute;
+      right: 32px;
+      top: 14px;
+
+      &-circle-icon {
+        width: 32px;
+        height: 32px;
+        fill: transparent;
+        stroke: $color-primary;
+        stroke-width: 2;
+
+        @include transition((fill stroke), 0.4s, ease);
+      }
+
+      &-arrow-icon {
+        position: absolute;
+        right: 10px;
+        top: 9px;
+        width: 10px;
+        height: 15px;
+        fill: transparent;
+        stroke: $color-primary;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2;
+
+        @include transition((fill stroke), 0.4s, ease);
+      }
+
+      &:focus-visible:not(:hover, :active) {
+        .header__bottom-btn-circle-icon {
+          fill: $color-light-primary;
+          stroke: $color-primary;
+        }
+
+        .header__bottom-btn-arrow-icon {
+          stroke: $color-white;
+        }
+      }
+
+      &:hover {
+        .header__bottom-btn-circle-icon {
+          fill: $color-primary;
+          stroke: $color-primary;
+        }
+
+        .header__bottom-btn-arrow-icon {
+          stroke: $color-white;
+        }
+      }
+
+      &:active {
+        .header__bottom-btn-circle-icon {
+          fill: $color-dark-primary;
+          stroke: $color-dark-primary;
+        }
+
+        .header__bottom-btn-arrow-icon {
+          stroke: $color-white;
+        }
+      }
+
+      &:disabled {
+        .header__bottom-btn-circle-icon {
+          fill: $color-white;
+          stroke: $color-gray;
+        }
+
+        .header__bottom-btn-arrow-icon {
+          stroke: $color-gray;
+        }
+      }
+    }
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 43px;
+    }
+
+    &-personal {
+      position: relative;
+      z-index: 11;
+      display: inline-block;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: -4px;
+        z-index: -11;
+
+        @include transition((background-color), 0.3s, ease-in);
+      }
+
+      &-icon {
+        width: 26px;
+        height: 28px;
+        fill: $color-primary;
+
+        @include transition((fill), 0.3s, ease-in);
+      }
+
+      &:focus-visible:not(:hover, :active) {
+        &::after {
+          background-color: $color-light-primary;
+        }
+
+        .header__bottom-personal-icon {
+          fill: $color-white;
+        }
+      }
+
+      &:hover {
+        .header__bottom-personal-icon {
+          fill: $color-light-primary;
+        }
+      }
+
+      &:active {
+        .header__bottom-personal-icon {
+          fill: $color-dark-primary;
+        }
+      }
+    }
+
+    &-basket {
+      position: relative;
+      z-index: 11;
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: -5px -5px -5px -15px;
+        z-index: -11;
+
+        @include transition((background-color), 0.3s, ease-in);
+      }
+
+      &-text {
+        position: absolute;
+        left: -6px;
+        top: 7px;
+        z-index: 11;
+        font-weight: $fontWeight-Bold;
+        text-align: center;
+        color: $color-white;
+
+        @include fontSize-lineHeight(10px, 100%);
+      }
+
+      &-ellipse-icon {
+        position: absolute;
+        left: -11px;
+        top: 5px;
+        width: 14px;
+        height: 15px;
+        fill: $color-orange;
+      }
+
+      &-icon {
+        width: 30px;
+        height: 28px;
+        fill: $color-primary;
+
+        @include transition((fill), 0.3s, ease-in);
+      }
+
+      &:focus-visible:not(:hover, :active) {
+        &::after {
+          background-color: $color-light-primary;
+        }
+
+        .header__bottom-basket-icon {
+          fill: $color-white;
+        }
+      }
+
+      &:hover {
+        .header__bottom-basket-icon {
+          fill: $color-light-primary;
+        }
+      }
+
+      &:active {
+        .header__bottom-basket-icon {
+          fill: $color-dark-primary;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,202 @@
+<aside class="catalog__aside">
+  <div class="catalog__filter">
+    <h3 class="catalog__filter-title title">Фильтровать по:</h3>
+
+    <form action="#" method="POST" aria-label="Форма фильтрации каталога" class="catalog__filter-form" enctype="multipart/form-data">
+      <div class="catalog__filter-color">
+        <h4 class="catalog__filter-subtitle title">Цвет</h4>
+        <ul class="catalog__filter-list list-reset">
+          <li class="catalog__filter-item">
+            <label for="brown" class="catalog__filter-label-checkbox">
+              <input
+                type="checkbox"
+                name="checkbox"
+                id="brown"
+                class="catalog__filter-input-checkbox input-reset visually-hidden"
+              />
+              <span class="catalog__filter-custom-checkbox" type="checkbox">
+                <svg
+                class="catalog__filter-custom-checkbox-mark"
+                aria-label="Выбрать цвет - коричневый"
+                role="button"
+                aria-hidden="true"
+              >
+                <use xlink:href="img/sprite.svg#icon_checkbox-mark"></use>
+              </svg>
+              </span>
+              <span class="catalog__filter-custom-checkbox-text">Коричневый</span>
+            </label>
+          </li>
+          <li class="catalog__filter-item">
+            <label for="black" class="filter__label-checkbox">
+              <input
+                type="checkbox"
+                name="checkbox"
+                id="black"
+                class="catalog__filter-input-checkbox input-reset visually-hidden"
+                checked="checked"
+              />
+              <span class="catalog__filter-custom-checkbox" type="checkbox">
+                <svg
+                class="catalog__filter-custom-checkbox-mark"
+                aria-label="Выбрать цвет - чёрный"
+                role="button"
+                aria-hidden="true"
+              >
+                <use xlink:href="img/sprite.svg#icon_checkbox-mark"></use>
+              </svg>
+              </span>
+              <span class="catalog__filter-custom-checkbox-text">Чёрный</span>
+            </label>
+          </li>
+          <li class="catalog__filter-item">
+            <label for="blue" class="catalog__filter-label-checkbox">
+              <input
+                type="checkbox"
+                name="checkbox"
+                id="blue"
+                class="catalog__filter-input-checkbox input-reset visually-hidden"
+              />
+              <span class="catalog__filter-custom-checkbox" type="checkbox">
+                <svg
+                class="catalog__filter-custom-checkbox-mark"
+                aria-label="Выбрать цвет - синий"
+                role="button"
+                aria-hidden="true"
+              >
+                <use xlink:href="img/sprite.svg#icon_checkbox-mark"></use>
+              </svg>
+              </span>
+              <span class="catalog__filter-custom-checkbox-text">Синий</span>
+            </label>
+          </li>
+          <li class="catalog__filter-item">
+            <label for="white" class="catalog__filter-label-checkbox">
+              <input
+                type="checkbox"
+                name="checkbox"
+                id="white"
+                class="catalog__filter-input-checkbox input-reset visually-hidden"
+              />
+              <span class="catalog__filter-custom-checkbox" type="checkbox">
+                <svg
+                class="catalog__filter-custom-checkbox-mark"
+                aria-label="Выбрать цвет - белый"
+                role="button"
+                aria-hidden="true"
+              >
+                <use xlink:href="img/sprite.svg#icon_checkbox-mark"></use>
+              </svg>
+              </span>
+              <span class="catalog__filter-custom-checkbox-text">Белый</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div class="catalog__filter-categories">
+        <h4 class="catalog__filter-subtitle title">Категория</h4>
+        <ul class="catalog__filter-list list-reset">
+          <li class="catalog__filter-item">
+            <label for="sofas" class="catalog__filter-label-checkbox">
+              <input
+                type="checkbox"
+                name="checkbox"
+                id="sofas"
+                class="catalog__filter-input-checkbox input-reset visually-hidden"
+                checked="checked"
+              />
+              <span class="catalog__filter-custom-checkbox" type="checkbox">
+                <span class="visually-hidden">Галочка</span>
+                <svg
+                class="catalog__filter-custom-checkbox-mark"
+                aria-label="Выбрать категорию - диваны"
+                role="button"
+                aria-hidden="true"
+              >
+                <use xlink:href="img/sprite.svg#icon_checkbox-mark"></use>
+              </svg>
+              </span>
+              <span class="catalog__filter-custom-checkbox-text">Диваны</span>
+            </label>
+          </li>
+          <li class="catalog__filter-item">
+            <label for="armchairs" class="catalog__filter-label-checkbox">
+              <input
+                type="checkbox"
+                name="checkbox"
+                id="armchairs"
+                class="catalog__filter-input-checkbox input-reset visually-hidden"
+              />
+              <span class="catalog__filter-custom-checkbox" type="checkbox">
+                <svg
+                class="catalog__filter-custom-checkbox-mark"
+                aria-label="Выбрать категорию - кресла"
+                role="button"
+                aria-hidden="true"
+              >
+                <use xlink:href="img/sprite.svg#icon_checkbox-mark"></use>
+              </svg>
+              </span>
+              <span class="catalog__filter-custom-checkbox-text">Кресла</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div class="catalog__filter-price">
+        <h4 class="catalog__filter-subtitle catalog__filter-subtitle--price title">Цена</h4>
+        <div class="catalog__filter-wrapper">
+          <label class="catalog__filter-label-input" for="input-price-before">
+            <span class="catalog__filter-label-span">от</span>
+            <input
+            class="catalog__filter-input-text input-reset"
+              type="text"
+              id="input-price-before"
+              name="price"
+              value="2000"
+            />
+          </label>
+          <label class="catalog__filter-label-input input-reset" for="input-price-after">
+            <span class="catalog__filter-label-span">до</span>
+            <input
+            class="catalog__filter-input-text input-reset"
+              type="text"
+              id="input-price-after"
+              name="price"
+              value="150 000"
+            />
+          </label>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="catalog__banner">
+    <div class="catalog__banner-text">
+      <h4 class="catalog__banner-subtitle title">Оксфорд 1950</h4>
+      <p class="catalog__banner-description">
+        Новая коллекция изысканных кресел
+      </p>
+      <a href="#" class="catalog__banner-link" aria-label="Открыть каталог">
+        <span class="catalog__banner-link-span">В каталог</span>
+        <span class="visually-hidden">Открыть каталог</span>
+        <svg
+          class="catalog__banner-link-circle-icon"
+          aria-label="Перейти в каталог"
+          role="button"
+          aria-hidden="true"
+        >
+          <use xlink:href="img/sprite.svg#icon_circle"></use>
+        </svg>
+        <span class="visually-hidden">Открыть каталог</span>
+        <svg
+          class="catalog__banner-link-arrow-icon"
+          aria-label="Перейти в каталог"
+          role="button"
+          aria-hidden="true"
+        >
+          <use xlink:href="img/sprite.svg#icon_arrow-right"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+</aside>

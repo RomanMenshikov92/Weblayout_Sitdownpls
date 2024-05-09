@@ -1,0 +1,58 @@
+.hero {
+  margin-bottom: 70px;
+
+  @include background(
+    url("../../img/1920/hero-banner_first.jpg"),
+    center,
+    no-repeat,
+    cover
+  );
+
+  &__container {
+    padding: 80px 0;
+  }
+
+  &__title {
+    margin-bottom: 49px;
+    width: 100%;
+    max-width: 496px;
+    font-weight: $fontWeight-Bold;
+    color: $color-gray;
+
+    @include fontSize-lineHeight(48px, normal);
+  }
+
+  &__btn {
+    border: 2px solid $color-primary;
+    border-radius: 10px;
+    padding: 21px 49px;
+    font-weight: $fontWeight-Bold;
+    text-align: center;
+    color: $color-white;
+    background-color: $color-primary;
+
+    @include fontSize-lineHeight(16px, 100%);
+    @include transition((border-color background-color color), 0.4s, ease);
+
+    &:focus-visible:not(:hover, :active) {
+      border-color: $color-dark-primary;
+      background-color: $color-light-primary;
+    }
+
+    &:hover {
+      border-color: $color-light-primary;
+      background-color: $color-light-primary;
+    }
+
+    &:active {
+      border-color: $color-dark-primary;
+      background-color: $color-dark-primary;
+    }
+
+    &:disabled {
+      border-color: $color-middle-gray;
+      color: $color-gray;
+      background-color: $color-middle-gray;
+    }
+  }
+}

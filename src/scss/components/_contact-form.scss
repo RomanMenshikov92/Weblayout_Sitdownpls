@@ -1,0 +1,180 @@
+.contact-form {
+  margin-bottom: 70px;
+
+  &__title {
+    margin-bottom: 9px;
+  }
+
+  &__container {
+    @include background(
+      url("../../img/1920/icon_furniture.svg"),
+      100% 50%,
+      no-repeat,
+      auto
+    );
+  }
+
+  &__description {
+    margin: 0;
+    width: 100%;
+    max-width: 624px;
+    font-weight: $fontWeight-Regular;
+    color: $color-dark-gray;
+
+    @include fontSize-lineHeight(14px, normal);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    width: 100%;
+    max-width: 624px;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    width: 100%;
+    gap: 30px;
+  }
+
+  &__input {
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 16px;
+    width: 100%;
+    background-color: $color-light-gray;
+
+    @include transition((border-color background-color), 0.3s, ease-in);
+
+    &::placeholder {
+      font-weight: $fontWeight-Regular;
+
+      @include fontSize-lineHeight(16px, 250%);
+
+      color: $color-gray;
+    }
+
+    &:focus-visible:not(:hover, :active) {
+      border-color: $color-primary;
+      background-color: $color-light-pink;
+    }
+
+    &:hover {
+      background-color: $color-middle-gray;
+    }
+  }
+
+  &__btn {
+    align-self: flex-start;
+    margin-bottom: 12px;
+    border: 2px solid $color-primary;
+    border-radius: 10px;
+    padding: 17px 33px;
+    font-weight: $fontWeight-SemiBold;
+    text-align: center;
+    color: $color-white;
+    background-color: $color-primary;
+
+    @include fontSize-lineHeight(16px, 100%);
+    @include transition((border-color background-color color), 0.4s, ease);
+
+    &:focus-visible:not(:hover, :active) {
+      border-color: $color-dark-primary;
+      background-color: $color-light-primary;
+    }
+
+    &:hover {
+      border-color: $color-light-primary;
+      background-color: $color-light-primary;
+    }
+
+    &:active {
+      border-color: $color-dark-primary;
+      background-color: $color-dark-primary;
+    }
+
+    &:disabled {
+      border-color: $color-middle-gray;
+      color: $color-gray;
+      background-color: $color-middle-gray;
+    }
+  }
+
+  &__checkbox {
+    &-label {
+      position: relative;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    &-input {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      cursor: pointer;
+
+      &:checked
+        ~ .contact-form__checkbox-custom
+        .contact-form__checkbox-custom-mark {
+        display: block;
+      }
+
+      &:checked ~ .contact-form__checkbox-custom {
+        border-color: $color-primary;
+        background-color: $color-primary;
+      }
+    }
+
+    &-custom {
+      position: absolute;
+      left: 0;
+      top: 5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $color-gray;
+      border-radius: 2px;
+      width: 14px;
+      height: 14px;
+      background-color: $color-white;
+
+      @include transition((background-color border-color), 0.4s, ease);
+
+      &-mark {
+        position: absolute;
+        left: 1px;
+        top: 2px;
+        display: none;
+        width: 11px;
+        height: 9px;
+        fill: transparent;
+        stroke: $color-white;
+        stroke-width: 2px;
+
+        @include transition((display), 0.4s, ease);
+      }
+    }
+
+    &-text {
+      margin-left: 22px;
+      font-weight: $fontWeight-Regular;
+
+      @include fontSize-lineHeight(14px, normal);
+
+      color: $color-black;
+
+      &-link {
+        text-decoration: underline;
+        color: $color-primary;
+        text-decoration-skip-ink: none;
+      }
+    }
+  }
+}

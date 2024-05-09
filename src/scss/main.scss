@@ -6,11 +6,16 @@
 
 // подключения компонентов страницы
 @import "./components/header";
-
-// тестовые стили, удалите их
-.page__body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: var(--vh);
-}
+@import "./components/hero";
+@import "./components/special-offers";
+@import "./components/high-rating";
+@import "./components/block-banner";
+@import "./components/top-categories";
+@import "./components/useful";
+@import "./components/contact-form";
+@import "./components/footer";
+@import "./components/breadcrumbs";
+@import "./components/catalog";
+@import "./components/product";
+@import "./components/similar-products";
+@import "./components/cooperation-with-suppliers";

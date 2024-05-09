@@ -1,24 +1,42 @@
-html {
-  box-sizing: border-box;
-}
-
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 .page {
   height: 100%;
-  font-family: var(--font-family, sans-serif);
+  font-family: $fontFamily-OpenSans;
+  font-style: $fontNormal;
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 .page__body {
   margin: 0;
   min-width: 320px;
   min-height: 100%;
+  font-weight: 400;
   font-size: 16px;
+  background-color: $color-white;
+
+  &--catalog {
+    .header {
+      margin-bottom: 15px;
+    }
+  }
+
+  &--product {
+    .header {
+      margin-bottom: 13px;
+    }
+  }
+
+  &--cooperation {
+    .header {
+      margin-bottom: 15px;
+    }
+  }
 }
 
 img {
@@ -27,21 +45,38 @@ img {
   object-fit: cover;
 }
 
+svg {
+  width: 15px;
+  height: 15px;
+  fill: inherit;
+  stroke: inherit;
+  -webkit-transition: fill, stroke 0.5s ease;
+  -moz-transition: fill, stroke 0.5s ease;
+  -ms-transition: fill, stroke 0.5s ease;
+  -o-transition: fill, stroke 0.5s ease;
+  transition: fill, stroke 0.5s ease;
+}
+
+path,
+circle {
+  -webkit-transition: fill, stroke 0.5s ease;
+  -moz-transition: fill, stroke 0.5s ease;
+  -ms-transition: fill, stroke 0.5s ease;
+  -o-transition: fill, stroke 0.5s ease;
+  transition: fill, stroke 0.5s ease;
+}
+
 a {
+  outline: none;
   text-decoration: none;
-}
-
-.site-container {
-  overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
-}
-
-.is-hidden {
-  display: none !important; /* stylelint-disable-line declaration-no-important */
+  color: inherit;
 }
 
 .btn-reset {
+  outline: none;
   border: none;
   padding: 0;
+  text-align: center;
   background-color: transparent;
   cursor: pointer;
 }
@@ -50,14 +85,18 @@ a {
   list-style: none;
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
 
 .input-reset {
   -webkit-appearance: none;
   appearance: none;
+  outline: none;
   border: none;
   border-radius: 0;
+  padding: 0;
   background-color: #fff;
+  resize: none;
 
   &::-webkit-search-decoration,
   &::-webkit-search-cancel-button,
@@ -79,17 +118,18 @@ a {
 }
 
 .container {
+  position: relative;
   margin: 0 auto;
-  padding: 0 var(--container-offset);
-  max-width: var(--container-width);
+  padding: 0;
+  max-width: $containerMaxWidth;
 }
 
-.js-focus-visible :focus:not(.focus-visible) {
-  outline: none;
-}
-
-.centered {
-  text-align: center;
+.title {
+  margin: 0;
+  font-weight: $fontWeight-Regular;
+  font-size: 32px;
+  line-height: 100%;
+  color: $color-black;
 }
 
 .dis-scroll {
