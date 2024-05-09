@@ -48,4 +48,4 @@ jobs:
         with:
           branch: gh-pages
           public: true
-          source: ./app
+          source: ./build
