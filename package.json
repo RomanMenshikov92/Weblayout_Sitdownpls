@@ -4,6 +4,8 @@
   "description": "",
   "main": "gulpfile.js",
   "type": "module",
+  "homepage": "https://romanmenshikov92.github.io/Weblayout_Sitdownpls/",
+  "repository": "https://github.com/RomanMenshikov92/Weblayout_Sitdownpls.git",
   "scripts": {
     "stylelint": "npx stylelint **/*.scss",
     "style-fix": "npx stylelint **/*.scss --fix",
