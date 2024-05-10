@@ -1,6 +1,7 @@
 .similar-products {
   &__container {
-    padding: 82px 0 70px;
+    padding-top: 82px;
+    padding-bottom: 70px;
   }
 
   &__title {
@@ -58,7 +59,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 24px;
+    gap: 23px;
   }
 
   &__subtitle {

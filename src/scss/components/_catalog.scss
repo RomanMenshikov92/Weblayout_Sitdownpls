@@ -423,7 +423,7 @@
 
     &-pagination {
       position: absolute;
-      right: 34%;
+      right: calc(1280px - 61%);
       bottom: 70px;
       display: flex;
       gap: 17px;

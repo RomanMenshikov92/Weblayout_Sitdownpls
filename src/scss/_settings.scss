@@ -2,6 +2,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  outline: 1px solid red;
 }
 
 .page {
@@ -120,7 +121,7 @@ a {
 .container {
   position: relative;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 $containerOffset;
   max-width: $containerMaxWidth;
 }
 
