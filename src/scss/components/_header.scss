@@ -2,8 +2,24 @@
   position: relative;
   margin-bottom: 32px;
 
+  @include tablet-small {
+    overflow: hidden;
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__top {
     background-color: $color-light-gray;
+
+    @include mobile {
+      order: -1;
+      border-top: 1px solid $color-light-gray;
+      border-bottom: 1px solid $color-light-gray;
+      background-color: $color-white;
+    }
 
     &-container {
       display: flex;
@@ -15,7 +31,40 @@
 
       @include laptop {
         flex-direction: column;
+        align-items: flex-start;
+        padding-top: 18px;
+        padding-bottom: 17px;
+        gap: 35px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 46%;
+          background-color: $color-white;
+        }
       }
+
+      @include tablet-big {
+        gap: 36px;
+      }
+
+      @include mobile {
+        padding-top: 14px;
+        padding-bottom: 14px;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    &-wrapper {
+      margin-right: 10px;
+      width: 100%;
+      max-width: 146px;
     }
 
     &-tel {
@@ -45,6 +94,12 @@
         fill: $color-orange;
 
         @include transition((fill), 0.3s, ease-in);
+
+        @include laptop {
+          margin-right: 2px;
+          width: 20px;
+          height: 20px;
+        }
       }
 
       &:focus-visible:not(:hover, :active) {
@@ -70,9 +125,29 @@
       }
     }
 
+    &-nav {
+      @include mobile {
+        display: none;
+      }
+
+      @include tablet-small {
+        width: 100%;
+      }
+    }
+
     &-list {
       display: flex;
+      flex-wrap: wrap;
       gap: 64px;
+
+      @include tablet-big {
+        gap: 35px;
+      }
+
+      @include tablet-small {
+        justify-content: space-between;
+        gap: 15px;
+      }
     }
 
     &-link {
@@ -83,6 +158,7 @@
 
       font-weight: $fontWeight-Regular;
       color: $color-gray;
+      text-wrap: nowrap;
 
       @include transition((color), 0.3s, ease-in);
 
@@ -116,6 +192,11 @@
   &__middle {
     background-color: $color-white;
 
+    @include mobile {
+      order: -2;
+      background-color: $color-light-gray;
+    }
+
     &-container {
       display: flex;
       flex-direction: row;
@@ -123,31 +204,101 @@
       justify-content: space-between;
       padding-top: 32px;
       padding-bottom: 32px;
+
+      @include laptop {
+        padding-top: 32px;
+        padding-bottom: 33px;
+      }
+
+      @include tablet-big {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 36px;
+        gap: 33px;
+      }
+
+      @include mobile {
+        margin-bottom: 11px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        gap: 0;
+      }
     }
 
     &-logo {
+      margin-right: 10px;
       font-size: 0;
+
+      &-img {
+        max-width: none;
+      }
+
+      @include tablet-big {
+        margin-left: -3px;
+      }
+
+      @include mobile {
+        align-self: center;
+        margin: 0;
+      }
     }
 
     &-nav {
       margin-top: 4px;
+
+      @include laptop {
+        margin-top: 0;
+      }
+
+      @include mobile {
+        position: absolute;
+        bottom: -95px;
+        margin-left: 3px;
+      }
     }
 
     &-list {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       gap: 92px;
+
+      @include laptop {
+        justify-content: stretch;
+        gap: 42px;
+      }
+
+      @include tablet-big {
+        margin-left: -3px;
+        width: 633px;
+        gap: 39px;
+      }
+
+      @include tablet-small {
+        flex-wrap: wrap;
+      }
+
+      @include mobile {
+        position: absolute;
+        bottom: 0;
+        justify-content: flex-start;
+        gap: 31px;
+      }
     }
 
     &-link {
       position: relative;
       z-index: 11;
-
-      @include fontSize-lineHeight(16px, 100%);
-
       font-weight: $fontWeight-Regular;
+      white-space: nowrap;
       color: $color-black;
 
+      @include fontSize-lineHeight(16px, 100%);
       @include transition((color), 0.3s, ease-in);
+
+      @include tablet-big {
+        @include fontSize-lineHeight(14px, 100%);
+      }
 
       &::after {
         content: "";
@@ -179,6 +330,10 @@
   &__bottom {
     background-color: $color-white;
 
+    @include mobile {
+      padding-top: 52px;
+    }
+
     &-container {
       display: flex;
       flex-direction: row;
@@ -189,6 +344,10 @@
     &-form {
       position: relative;
       height: 100%;
+
+      @include tablet-small {
+        width: 100%;
+      }
     }
 
     &-input {
@@ -199,6 +358,22 @@
       background-color: $color-light-gray;
 
       @include transition((border-color background-color), 0.3s, ease-in);
+
+      @include laptop {
+        width: 733px;
+      }
+
+      @include tablet-big {
+        width: 630px;
+      }
+
+      @include tablet-small {
+        width: 100%;
+      }
+
+      @include mobile {
+        min-width: 291px;
+      }
 
       &::placeholder {
         @include fontSize-lineHeight(16px, 120%);
@@ -315,6 +490,22 @@
       display: flex;
       align-items: center;
       gap: 43px;
+
+      @include laptop {
+        position: absolute;
+        right: 36px;
+        top: -132px;
+      }
+
+      @include tablet-big {
+        right: 73px;
+        top: -116px;
+      }
+
+      @include mobile {
+        right: 15px;
+        top: -92px;
+      }
     }
 
     &-personal {
@@ -387,6 +578,11 @@
         color: $color-white;
 
         @include fontSize-lineHeight(10px, 100%);
+
+        @include laptop {
+          left: -7px;
+          top: 6px;
+        }
       }
 
       &-ellipse-icon {
@@ -396,6 +592,10 @@
         width: 14px;
         height: 15px;
         fill: $color-orange;
+
+        @include laptop {
+          top: 4px;
+        }
       }
 
       &-icon {

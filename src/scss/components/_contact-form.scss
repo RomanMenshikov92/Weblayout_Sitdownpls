@@ -1,6 +1,10 @@
 .contact-form {
   margin-bottom: 70px;
 
+  @include mobile {
+    margin-bottom: 49px;
+  }
+
   &__title {
     margin-bottom: 9px;
   }
@@ -8,10 +12,19 @@
   &__container {
     @include background(
       url("../img/1920/icon_furniture.svg"),
-      100% 50%,
+      96% 50%,
       no-repeat,
       auto
     );
+
+    @include laptop {
+      @include background(
+        url("../img/1920/icon_furniture_1024.svg"),
+        96% 50%,
+        no-repeat,
+        auto
+      );
+    }
   }
 
   &__description {
@@ -22,6 +35,10 @@
     color: $color-dark-gray;
 
     @include fontSize-lineHeight(14px, normal);
+
+    @include laptop {
+      max-width: 403px;
+    }
   }
 
   &__form {
@@ -30,6 +47,10 @@
     margin-top: 16px;
     width: 100%;
     max-width: 624px;
+
+    @include laptop {
+      max-width: 403px;
+    }
   }
 
   &__label {
@@ -38,6 +59,10 @@
     margin-bottom: 30px;
     width: 100%;
     gap: 30px;
+
+    @include laptop {
+      margin-bottom: 28px;
+    }
   }
 
   &__input {
@@ -73,6 +98,8 @@
     border: 2px solid $color-primary;
     border-radius: 10px;
     padding: 17px 33px;
+    width: 100%;
+    max-width: 160px;
     font-weight: $fontWeight-SemiBold;
     text-align: center;
     color: $color-white;

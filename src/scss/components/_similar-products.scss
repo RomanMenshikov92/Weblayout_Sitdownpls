@@ -1,7 +1,18 @@
 .similar-products {
   &__container {
-    padding-top: 82px;
+    padding-top: 129px;
     padding-bottom: 70px;
+
+    // @include laptop {
+    //   padding-top: 67px;
+    // }
+    @include tablet-big {
+      padding-top: 32px;
+    }
+
+    @include mobile {
+      padding-top: 68px;
+    }
   }
 
   &__title {
@@ -14,6 +25,18 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 32px;
+
+    @include laptop {
+      grid-template-columns: repeat(9, 1fr);
+    }
+
+    @include tablet-big {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include mobile {
+      gap: 15px;
+    }
   }
 
   &__item {
@@ -29,6 +52,23 @@
     background-color: $color-light-gray;
 
     @include transition((background-color), 0.3s, ease-out);
+
+    @include mobile {
+      padding: 17px;
+      min-height: 278px;
+    }
+
+    &:nth-child(4) {
+      @include laptop {
+        display: none;
+      }
+    }
+
+    &:nth-child(3) {
+      @include tablet-big {
+        display: none;
+      }
+    }
   }
 
   &__status-rating {
@@ -43,10 +83,23 @@
 
     @include fontSize-lineHeight(16px, 130%);
 
+    @include mobile {
+      left: 17px;
+      top: 16px;
+
+      @include fontSize-lineHeight(12px, 130%);
+    }
+
     &-icon {
       width: 15px;
       height: 15px;
       fill: $color-orange;
+
+      @include mobile {
+        margin-right: -4px;
+        width: 13px;
+        height: 12px;
+      }
     }
   }
 
@@ -60,6 +113,16 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 23px;
+
+    @include tablet-small {
+      align-items: center;
+      width: 100%;
+    }
+
+    @include mobile {
+      align-items: flex-start;
+      gap: 16px;
+    }
   }
 
   &__subtitle {
@@ -67,6 +130,18 @@
 
     font-weight: $fontWeight-Regular;
     color: $color-black;
+
+    @include tablet-small {
+      width: 100%;
+
+      @include fontSize-lineHeight(18px, 130%);
+    }
+
+    @include mobile {
+      width: 108px;
+
+      @include fontSize-lineHeight(16px, 130%);
+    }
   }
 
   &__price {
@@ -80,12 +155,25 @@
     border: 2px solid $color-primary;
     border-radius: 10px;
     padding: 17px 33px;
+    width: 100%;
+    max-width: 130px;
     font-weight: $fontWeight-SemiBold;
     text-align: center;
     color: $color-primary;
 
     @include fontSize-lineHeight(16px, 100%);
     @include transition((border-color background-color color), 0.3s, ease-out);
+
+    @include tablet-small {
+      @include fontSize-lineHeight(14px, 100%);
+
+      padding: 17px 24px;
+    }
+
+    @include mobile {
+      padding: 9px 23px;
+      width: 100%;
+    }
 
     &:focus-visible:not(:hover, :active) {
       border-color: $color-dark-primary;

@@ -7,9 +7,22 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: 296px 1fr 296px;
-    grid-template-rows: 511px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
     gap: 32px;
+
+    @include laptop {
+      grid-template-columns: repeat(9, 1fr);
+    }
+
+    @include tablet-big {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include mobile {
+      grid-template-rows: auto;
+      gap: 24px;
+    }
   }
 
   &__article {
@@ -18,11 +31,23 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
+    grid-column: 3 span;
     border-radius: 10px;
-
-    // min-height: 511px;
-    padding: 30px;
+    padding: 27px 30px;
     background-color: $color-light-gray;
+
+    @include laptop {
+      padding: 30px;
+      min-height: 511px;
+    }
+
+    @include tablet-mini {
+      grid-column: 6 span;
+    }
+
+    @include mobile {
+      grid-column: 6 span;
+    }
 
     &:nth-child(2) {
       @include background(
@@ -32,8 +57,50 @@
         auto
       );
 
+      @include laptop {
+        @include background(none, none, none, none);
+      }
+    }
+
+    &:nth-child(3n-1) {
+      grid-column: 6 span;
+
+      @include laptop {
+        grid-column: 3 span;
+      }
+
+      @include tablet-mini {
+        grid-column: 6 span;
+      }
+
+      @include mobile {
+        grid-column: 6 span;
+      }
+
       .special-offers__picture {
         margin: 7px auto 16px;
+
+        @include laptop {
+          margin: 7px -7px 49px;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      @include tablet-big {
+        display: none;
+      }
+
+      @include mobile {
+        display: flex;
+      }
+    }
+
+    &:nth-child(n + 4) {
+      display: none;
+
+      @include mobile {
+        display: flex;
       }
     }
   }
@@ -73,6 +140,15 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @include tablet-small {
+      align-items: center;
+      width: 100%;
+    }
+
+    @include mobile {
+      align-items: flex-start;
+    }
   }
 
   &__article-title {
@@ -83,6 +159,10 @@
     color: $color-black;
 
     @include fontSize-lineHeight(24px, 130%);
+
+    @include mobile {
+      @include fontSize-lineHeight(24px, 130%);
+    }
   }
 
   &__price {
@@ -115,12 +195,18 @@
     border: 2px solid $color-primary;
     border-radius: 10px;
     padding: 17px 34px;
+    width: 100%;
+    max-width: 130px;
     font-weight: $fontWeight-SemiBold;
     text-align: center;
     color: $color-primary;
 
     @include fontSize-lineHeight(16px, 100%);
     @include transition((border-color background-color color), 0.3s, ease-out);
+
+    @include mobile {
+      @include fontSize-lineHeight(16px, 100%);
+    }
 
     &:focus-visible:not(:hover, :active) {
       border-color: $color-dark-primary;

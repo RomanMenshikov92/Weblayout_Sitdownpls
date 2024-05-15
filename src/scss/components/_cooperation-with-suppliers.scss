@@ -3,10 +3,18 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     padding-bottom: 38px;
+
+    @include laptop {
+      grid-template-columns: repeat(9, 1fr);
+    }
+
+    @include tablet-big {
+      grid-template-columns: repeat(6, 1fr);
+    }
   }
 
   &__title {
-    grid-column: 12 span;
+    grid-column: -1 / 1;
     margin-bottom: 32px;
   }
 
@@ -15,12 +23,32 @@
   &__guarantee {
     grid-column: 8 span;
     margin-bottom: 32px;
+
+    @include tablet-big {
+      grid-column: -1 / 1;
+    }
+
+    @include mobile {
+      margin-bottom: 29px;
+    }
   }
 
   &__what-get,
   &__term {
     grid-column: 6 span;
     margin-bottom: 32px;
+
+    @include laptop {
+      margin-bottom: 7px;
+    }
+
+    @include tablet-big {
+      grid-column: -1 / 1;
+    }
+
+    @include mobile {
+      margin-bottom: 9px;
+    }
   }
 
   &__subtitle {
@@ -30,8 +58,22 @@
 
     color: $color-black;
 
+    @include tablet-big {
+      margin-bottom: 13px;
+    }
+
+    @include mobile {
+      margin-bottom: 12px;
+
+      @include fontSize-lineHeight(16px, normal);
+    }
+
     &--advantages {
       letter-spacing: 0.5px;
+
+      @include mobile {
+        @include fontSize-lineHeight(14px, normal);
+      }
     }
   }
 
@@ -39,6 +81,10 @@
     margin: 0;
 
     @include fontSize-lineHeight(16px, 183%);
+
+    @include mobile {
+      @include fontSize-lineHeight(14px, 180%);
+    }
 
     color: $color-dark-gray;
   }
@@ -72,6 +118,10 @@
       @include fontSize-lineHeight(16px, 150%);
 
       color: $color-dark-gray;
+
+      @include mobile {
+        @include fontSize-lineHeight(14px, 150%);
+      }
     }
 
     &-number {
@@ -86,6 +136,10 @@
     &-description {
       @include fontSize-lineHeight(16px, 180%);
 
+      @include mobile {
+        @include fontSize-lineHeight(14px, 180%);
+      }
+
       color: $color-dark-gray;
     }
   }
@@ -94,6 +148,10 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+
+    @include mobile {
+      gap: 9px;
+    }
   }
 
   &__item-guarantee {
@@ -103,16 +161,36 @@
 
     color: $color-dark-gray;
 
+    @include mobile {
+      @include fontSize-lineHeight(14px, 180%);
+    }
+
     &-text {
       margin-left: 17px;
     }
 
     &:nth-child(1) {
       margin-bottom: 14px;
+
+      @include tablet-big {
+        margin-bottom: 12px;
+      }
+
+      @include mobile {
+        margin-bottom: 10px;
+      }
     }
 
     &:nth-child(2) {
       margin-bottom: 42px;
+
+      @include tablet-big {
+        margin-bottom: 15px;
+      }
+
+      @include mobile {
+        margin-bottom: 8px;
+      }
     }
   }
 
@@ -129,5 +207,17 @@
       no-repeat,
       auto
     );
+
+    @include mobile {
+      padding: 3px 0 22px 50px;
+
+      @include fontSize-lineHeight(16px, 150%);
+      @include background(
+        url("../img/320/icon_pencil_320.svg"),
+        0% 25%,
+        no-repeat,
+        auto
+      );
+    }
   }
 }

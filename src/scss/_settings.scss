@@ -2,7 +2,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  outline: 1px solid red;
+
+  // outline: 1px solid red;
 }
 
 .page {
@@ -24,18 +25,30 @@
   &--catalog {
     .header {
       margin-bottom: 15px;
+
+      @include mobile {
+        margin-bottom: 24px;
+      }
     }
   }
 
   &--product {
     .header {
       margin-bottom: 13px;
+
+      @include mobile {
+        margin-bottom: 22px;
+      }
     }
   }
 
   &--cooperation {
     .header {
       margin-bottom: 15px;
+
+      @include mobile {
+        margin-bottom: 32px;
+      }
     }
   }
 }
@@ -123,6 +136,21 @@ a {
   margin: 0 auto;
   padding: 0 $containerOffset;
   max-width: $containerMaxWidth;
+
+  @include laptop {
+    padding-right: $containerOffsetLaptop;
+    padding-left: $containerOffsetLaptop;
+  }
+
+  @include tablet-big {
+    padding-right: $containerOffsetTabletBig;
+    padding-left: $containerOffsetTabletBig;
+  }
+
+  @include mobile {
+    padding-right: $containerOffsetMobile;
+    padding-left: $containerOffsetMobile;
+  }
 }
 
 .title {
@@ -131,6 +159,10 @@ a {
   font-size: 32px;
   line-height: 100%;
   color: $color-black;
+
+  @include mobile {
+    font-size: 24px;
+  }
 }
 
 .dis-scroll {

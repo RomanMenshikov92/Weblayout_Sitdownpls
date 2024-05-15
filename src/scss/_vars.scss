@@ -23,12 +23,17 @@ $containerMaxWidth: 1340px;
 
 // container-offset
 $containerOffset: 30px;
+$containerOffsetLaptop: 36px;
+$containerOffsetTabletBig: 73px;
+$containerOffsetMobile: 13px;
 
 // breakpoints
-$desktop: 1360px;
-$laptop: 1024px;
-$tablet-mini: 768px;
-$mobile: 576px;
+$desktop: 1440px;
+$laptop: 1279px;
+$tablet-big: 992px;
+$tablet-small: 767px;
+$tablet-mini: 600px;
+$mobile: 480px;
 
 // font-family-default
 $fontFamily-OpenSans: "OpenSans", sans-serif;

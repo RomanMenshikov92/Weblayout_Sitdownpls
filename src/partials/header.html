@@ -1,17 +1,19 @@
 <header class="header">
   <div class="header__top">
     <div class="header__top-container container">
-      <a
-        class="header__top-tel"
-        aria-label="Номер телефона"
-        href="tel:+74958854547"
-      >
-        <span class="visually-hidden">Открыть телефон</span>
-        <svg class="header__top-tel-icon" aria-hidden="true">
-          <use xlink:href="img/sprite.svg#icon_call"></use>
-        </svg>
-        +7(495)885-45-47
-      </a>
+      <div class="header__top-wrapper">
+        <a
+          class="header__top-tel"
+          aria-label="Номер телефона"
+          href="tel:+74958854547"
+        >
+          <span class="visually-hidden">Открыть телефон</span>
+          <svg class="header__top-tel-icon" aria-hidden="true">
+            <use xlink:href="img/sprite.svg#icon_call"></use>
+          </svg>
+          +7(495)885-45-47
+        </a>
+      </div>
       <nav class="header__top-nav">
         <ul class="header__top-list list-reset">
           <li class="header__top-item">
@@ -38,10 +40,10 @@
         aria-label="Логотип SitDownPls"
       >
         <img
-          class="header__middle=logo-img"
+          class="header__middle-logo-img"
           src="img/logo.svg"
           alt="Логотип SitDownPls"
-        />
+        >
       </a>
       <nav class="header__middle-nav">
         <ul class="header__middle-list list-reset">
@@ -84,7 +86,7 @@
             placeholder="Я хочу купить..."
             onmouseout="this.blur();"
             autocomplete="off"
-          />
+          >
         </label>
         <span class="header__bottom-span">
           <span class="visually-hidden">Кнопка поиск</span>

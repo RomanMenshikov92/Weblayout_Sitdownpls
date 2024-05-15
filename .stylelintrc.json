@@ -414,7 +414,12 @@
       }
     ],
     "value-keyword-case": "lower",
-    "value-no-vendor-prefix": true,
+    "value-no-vendor-prefix": [
+      true,
+      {
+        "ignoreValues": ["initial", "/"]
+      }
+    ],
     "scss/at-else-closing-brace-newline-after": "always-last-in-chain",
     "scss/at-else-closing-brace-space-after": "always-intermediate",
     "scss/at-else-empty-line-before": "never",

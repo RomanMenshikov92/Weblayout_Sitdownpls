@@ -8,9 +8,46 @@
     cover
   );
 
+  @include laptop {
+    margin-bottom: 69px;
+
+    @include background(
+      url("../img/1024/hero-banner_first_1024.jpg"),
+      left,
+      no-repeat,
+      cover
+    );
+  }
+
+  @include tablet-big {
+    margin-bottom: 69px;
+
+    @include background(
+      url("../img/768/hero-banner_first_768.jpg"),
+      left,
+      no-repeat,
+      cover
+    );
+  }
+
+  @include mobile {
+    margin-bottom: 164px;
+
+    @include background(
+      url("../img/320/hero-banner_first_320.jpg"),
+      left,
+      no-repeat,
+      cover
+    );
+  }
+
   &__container {
     padding-top: 80px;
     padding-bottom: 80px;
+
+    @include mobile {
+      padding: 30px 30px 62px;
+    }
   }
 
   &__title {
@@ -21,12 +58,21 @@
     color: $color-gray;
 
     @include fontSize-lineHeight(48px, normal);
+
+    @include mobile {
+      margin-bottom: 0;
+      min-width: 204px;
+
+      @include fontSize-lineHeight(20px, normal);
+    }
   }
 
   &__btn {
     border: 2px solid $color-primary;
     border-radius: 10px;
     padding: 21px 49px;
+    width: 100%;
+    max-width: 189px;
     font-weight: $fontWeight-Bold;
     text-align: center;
     color: $color-white;
@@ -34,6 +80,13 @@
 
     @include fontSize-lineHeight(16px, 100%);
     @include transition((border-color background-color color), 0.4s, ease);
+
+    @include mobile {
+      position: relative;
+      left: -15px;
+      bottom: -157px;
+      min-width: 294px;
+    }
 
     &:focus-visible:not(:hover, :active) {
       border-color: $color-dark-primary;

@@ -1,32 +1,380 @@
-.catalog {
+.catalog-main {
   &__container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     padding-bottom: 134px;
     gap: 32px;
+
+    @include laptop {
+      grid-template-columns: repeat(9, 1fr);
+      gap: 27px;
+    }
+
+    @include tablet-big {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include mobile {
+      gap: 32px;
+    }
+  }
+}
+
+.catalog {
+  grid-column: 9 span;
+
+  @include laptop {
+    grid-column: -1 / 1;
   }
 
-  &__aside {
+  &__list {
+    &-title {
+      margin-bottom: 24px;
+
+      @include fontSize-lineHeight(24px, 130%);
+
+      @include laptop {
+        display: none;
+      }
+    }
+
+    &-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+
+      @include tablet-big {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include mobile {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 15px;
+      }
+    }
+
+    &-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      border-radius: 10px;
+      padding: 30px;
+      min-height: 420px;
+      background-color: $color-light-gray;
+
+      @include transition((background-color), 0.3s, ease-out);
+
+      @include tablet-mini {
+        padding: 20px;
+      }
+
+      @include mobile {
+        grid-column: 3 span;
+        padding: 17px;
+        min-height: 278px;
+      }
+
+      &-link {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 30px 30px 0;
+        width: 100%;
+        height: 100%;
+
+        @include mobile {
+          padding: 17px;
+        }
+      }
+
+      &:nth-child(3) {
+        .catalog__list-picture {
+          margin: 0 -42px 13px;
+
+          @include mobile {
+            margin: 0 -15px 5px;
+          }
+        }
+
+        &:focus:not(:hover, :active) {
+          background-color: $color-light-gray;
+        }
+
+        &:hover {
+          background-color: $color-gray;
+        }
+
+        &:active {
+          background-color: $color-dark-gray;
+        }
+      }
+
+      &:nth-child(n + 7) {
+        @include tablet-big {
+          display: none;
+        }
+      }
+    }
+
+    &-status-rating {
+      position: absolute;
+      left: 30px;
+      top: 30px;
+      display: inline-flex;
+      align-items: center;
+      font-weight: $fontWeight-Regular;
+      color: $color-orange;
+      gap: 10px;
+
+      @include fontSize-lineHeight(16px, 130%);
+
+      @include mobile {
+        left: 17px;
+        top: 16px;
+
+        @include fontSize-lineHeight(12px, 130%);
+      }
+
+      &-icon {
+        width: 15px;
+        height: 15px;
+        fill: $color-orange;
+
+        @include mobile {
+          margin-right: -4px;
+          width: 13px;
+          height: 12px;
+        }
+      }
+    }
+
+    &-picture {
+      align-self: center;
+      margin: 0 -15px 13px;
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+
+      @include tablet-small {
+        align-items: center;
+        width: 100%;
+      }
+
+      @include mobile {
+        align-items: flex-start;
+        gap: 16px;
+      }
+    }
+
+    &-subtitle {
+      @include fontSize-lineHeight(24px, 130%);
+
+      font-weight: $fontWeight-Regular;
+      color: $color-black;
+
+      @include tablet-small {
+        width: 100%;
+
+        @include fontSize-lineHeight(18px, 130%);
+      }
+
+      @include mobile {
+        width: 108px;
+
+        @include fontSize-lineHeight(16px, 130%);
+      }
+    }
+
+    &-price {
+      @include fontSize-lineHeight(16px, 130%);
+
+      font-weight: $fontWeight-Regular;
+      color: $color-dark-gray;
+    }
+
+    &-btn {
+      border: 2px solid $color-primary;
+      border-radius: 10px;
+      padding: 17px 33px;
+      width: 100%;
+      max-width: 130px;
+      font-weight: $fontWeight-SemiBold;
+      text-align: center;
+      color: $color-primary;
+
+      @include fontSize-lineHeight(16px, 100%);
+      @include transition(
+        (border-color background-color color),
+        0.3s,
+        ease-out
+      );
+
+      @include tablet-small {
+        @include fontSize-lineHeight(14px, 100%);
+
+        padding: 17px 24px;
+      }
+
+      @include mobile {
+        padding: 9px 23px;
+        width: 100%;
+      }
+
+      &:focus-visible:not(:hover, :active) {
+        border-color: $color-dark-primary;
+        color: $color-white;
+        background-color: $color-light-primary;
+      }
+
+      &:hover {
+        border-color: $color-primary;
+        color: $color-white;
+        background-color: $color-primary;
+      }
+
+      &:active {
+        border-color: $color-dark-primary;
+        color: $color-white;
+        background-color: $color-dark-primary;
+      }
+    }
+  }
+
+  &__pagination {
+    position: absolute;
+    right: calc(1280px - 61%);
+    bottom: 70px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    grid-column: 3 span;
+    gap: 17px;
+
+    @include laptop {
+      right: calc(1280px - 79%);
+    }
+
+    @include tablet-big {
+      right: 41%;
+      gap: 19px;
+    }
+
+    @include mobile {
+      right: 29%;
+    }
+
+    &-btn {
+      border: 2px solid $color-primary;
+      border-radius: 10px;
+      width: 32px;
+      height: 32px;
+      font-weight: $fontWeight-SemiBold;
+      text-align: center;
+
+      @include fontSize-lineHeight(16px, 100%);
+      @include transition((background-color color border-color), 0.4s, ease);
+
+      &--active {
+        border-color: $color-dark-primary;
+        color: $color-white;
+        background-color: $color-dark-primary;
+      }
+
+      &:nth-child(3) {
+        display: none;
+
+        @include tablet-big {
+          display: block;
+        }
+      }
+
+      &:focus-visible:not(:hover, :active) {
+        border-color: $color-primary;
+        color: $color-white;
+        background-color: $color-light-primary;
+      }
+
+      &:hover {
+        border-color: $color-primary;
+        color: $color-white;
+        background-color: $color-primary;
+      }
+
+      &:active {
+        border-color: $color-dark-primary;
+        color: $color-white;
+        background-color: $color-dark-primary;
+      }
+    }
+  }
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-column: 3 span;
+
+  @include laptop {
+    grid-column: -1 / 1;
   }
 
   &__filter {
     &-title {
+      display: none;
+
+      @include laptop {
+        display: block;
+        margin-bottom: 25px;
+
+        @include fontSize-lineHeight(24px, 130%);
+      }
+    }
+
+    &-header {
       margin-bottom: 21px;
       font-weight: $fontWeight-Regular;
 
       @include fontSize-lineHeight(18px, 130%);
 
       color: $color-black;
+
+      @include laptop {
+        display: none;
+      }
     }
 
     &-form {
       display: flex;
       flex-direction: column;
       gap: 29px;
+
+      @include laptop {
+        flex-direction: row;
+        gap: 46px;
+      }
+
+      @include tablet-mini {
+        flex-flow: wrap row;
+        gap: 20px 29px;
+      }
+    }
+
+    &-price {
+      @include laptop {
+        margin-left: 38px;
+      }
+
+      @include tablet-small {
+        margin-left: 14px;
+      }
+
+      @include tablet-mini {
+        margin-left: 0;
+      }
     }
 
     &-subtitle {
@@ -70,12 +418,12 @@
       cursor: pointer;
 
       &:checked
-        ~ .catalog__filter-custom-checkbox
-        .catalog__filter-custom-checkbox-mark {
+        ~ .aside__filter-custom-checkbox
+        .aside__filter-custom-checkbox-mark {
         display: block;
       }
 
-      &:checked ~ .catalog__filter-custom-checkbox {
+      &:checked ~ .aside__filter-custom-checkbox {
         border-color: $color-primary;
         background-color: $color-primary;
       }
@@ -123,6 +471,14 @@
     &-wrapper {
       display: inline-flex;
       gap: 8px;
+
+      @include tablet-small {
+        flex-direction: column;
+      }
+
+      @include tablet-mini {
+        flex-direction: row;
+      }
     }
 
     &-label {
@@ -146,6 +502,10 @@
 
   &__banner {
     border-radius: 10px 10px 0 0;
+
+    @include laptop {
+      display: none;
+    }
 
     @include background(
       url("../img/1920/new_collection-banner_catalog.jpg"),
@@ -241,31 +601,31 @@
       }
 
       &:focus-visible:not(:hover, :active) {
-        .catalog__banner-link-span::after {
+        .aside__banner-link-span::after {
           border-color: $color-primary;
         }
 
-        .catalog__banner-link-circle-icon {
+        .aside__banner-link-circle-icon {
           fill: $color-light-primary;
           stroke: $color-primary;
         }
 
-        .catalog__banner-link-arrow-icon {
+        .aside__banner-link-arrow-icon {
           stroke: $color-white;
         }
       }
 
       &:hover {
-        .catalog__banner-link-span::after {
+        .aside__banner-link-span::after {
           border-color: $color-primary;
         }
 
-        .catalog__banner-link-circle-icon {
+        .aside__banner-link-circle-icon {
           fill: $color-primary;
           stroke: $color-primary;
         }
 
-        .catalog__banner-link-arrow-icon {
+        .aside__banner-link-arrow-icon {
           stroke: $color-white;
         }
       }
@@ -273,194 +633,17 @@
       &:active {
         color: $color-dark-primary;
 
-        .catalog__banner-link-span::after {
+        .aside__banner-link-span::after {
           border-color: $color-dark-primary;
         }
 
-        .catalog__banner-link-circle-icon {
+        .aside__banner-link-circle-icon {
           fill: $color-dark-primary;
           stroke: $color-dark-primary;
         }
 
-        .catalog__banner-link-arrow-icon {
+        .aside__banner-link-arrow-icon {
           stroke: $color-white;
-        }
-      }
-    }
-  }
-
-  &__list {
-    grid-column: 9 span;
-
-    &-title {
-      margin-bottom: 24px;
-
-      @include fontSize-lineHeight(24px, 130%);
-    }
-
-    &-wrapper {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-
-    &-item {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-end;
-      border-radius: 10px;
-      padding: 30px;
-      min-height: 420px;
-      background-color: $color-light-gray;
-
-      @include transition((background-color), 0.3s, ease-out);
-
-      &-link {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding: 30px;
-        height: 100%;
-      }
-
-      &:nth-child(3) {
-        padding: 0;
-
-        &:focus:not(:hover, :active) {
-          background-color: $color-light-gray;
-        }
-
-        &:hover {
-          background-color: $color-gray;
-        }
-
-        &:active {
-          background-color: $color-dark-gray;
-        }
-      }
-    }
-
-    &-status-rating {
-      position: absolute;
-      left: 30px;
-      top: 30px;
-      display: inline-flex;
-      align-items: center;
-      font-weight: $fontWeight-Regular;
-      color: $color-orange;
-      gap: 10px;
-
-      @include fontSize-lineHeight(16px, 130%);
-
-      &-icon {
-        width: 15px;
-        height: 15px;
-        fill: $color-orange;
-      }
-    }
-
-    &-picture {
-      align-self: center;
-      margin: 0 -15px 13px;
-    }
-
-    &-text {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 24px;
-    }
-
-    &-subtitle {
-      @include fontSize-lineHeight(24px, 130%);
-
-      font-weight: $fontWeight-Regular;
-      color: $color-black;
-    }
-
-    &-price {
-      @include fontSize-lineHeight(16px, 130%);
-
-      font-weight: $fontWeight-Regular;
-      color: $color-dark-gray;
-    }
-
-    &-btn {
-      border: 2px solid $color-primary;
-      border-radius: 10px;
-      padding: 17px 33px;
-      font-weight: $fontWeight-SemiBold;
-      text-align: center;
-      color: $color-primary;
-
-      @include fontSize-lineHeight(16px, 100%);
-      @include transition(
-        (border-color background-color color),
-        0.3s,
-        ease-out
-      );
-
-      &:focus-visible:not(:hover, :active) {
-        border-color: $color-dark-primary;
-        color: $color-white;
-        background-color: $color-light-primary;
-      }
-
-      &:hover {
-        border-color: $color-primary;
-        color: $color-white;
-        background-color: $color-primary;
-      }
-
-      &:active {
-        border-color: $color-dark-primary;
-        color: $color-white;
-        background-color: $color-dark-primary;
-      }
-    }
-
-    &-pagination {
-      position: absolute;
-      right: calc(1280px - 61%);
-      bottom: 70px;
-      display: flex;
-      gap: 17px;
-
-      &-btn {
-        border: 2px solid $color-primary;
-        border-radius: 10px;
-        width: 32px;
-        height: 32px;
-        font-weight: $fontWeight-SemiBold;
-        text-align: center;
-
-        @include fontSize-lineHeight(16px, 100%);
-        @include transition((background-color color border-color), 0.4s, ease);
-
-        &--active {
-          border-color: $color-dark-primary;
-          color: $color-white;
-          background-color: $color-dark-primary;
-        }
-
-        &:focus-visible:not(:hover, :active) {
-          border-color: $color-primary;
-          color: $color-white;
-          background-color: $color-light-primary;
-        }
-
-        &:hover {
-          border-color: $color-primary;
-          color: $color-white;
-          background-color: $color-primary;
-        }
-
-        &:active {
-          border-color: $color-dark-primary;
-          color: $color-white;
-          background-color: $color-dark-primary;
         }
       }
     }

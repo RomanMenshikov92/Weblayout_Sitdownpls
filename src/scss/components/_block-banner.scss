@@ -8,9 +8,28 @@
     cover
   );
 
+  @include mobile {
+    margin-bottom: 162px;
+
+    @include background(
+      url("../img/320/new_collection-banner_320.jpg"),
+      center,
+      no-repeat,
+      cover
+    );
+  }
+
   &__container {
     padding-top: 153px;
     padding-bottom: 150px;
+
+    @include tablet-big {
+      padding: 155px 36px 150px;
+    }
+
+    @include mobile {
+      padding: 35px 13px 50px;
+    }
   }
 
   &__title {
@@ -21,23 +40,42 @@
     color: $color-gold;
 
     @include fontSize-lineHeight(60px, 120%);
+
+    @include mobile {
+      max-width: 187px;
+
+      @include fontSize-lineHeight(24px, 120%);
+    }
   }
 
   &__description {
     margin: 0;
-    margin-bottom: 49px;
+    margin-bottom: 53px;
     width: 100%;
     max-width: 508px;
     font-weight: $fontWeight-Regular;
     color: $color-white;
 
     @include fontSize-lineHeight(48px, 119%);
+
+    @include laptop {
+      margin-bottom: 50px;
+    }
+
+    @include mobile {
+      margin-bottom: 0;
+      max-width: 187px;
+
+      @include fontSize-lineHeight(16px, 120%);
+    }
   }
 
   &__btn {
     border: 2px solid $color-primary;
     border-radius: 10px;
     padding: 20px 30px;
+    width: 100%;
+    max-width: 187px;
     font-weight: $fontWeight-Bold;
     text-align: center;
     color: $color-white;
@@ -45,6 +83,13 @@
 
     @include fontSize-lineHeight(16px, 100%);
     @include transition((border-color background-color color), 0.4s, ease);
+
+    @include mobile {
+      position: relative;
+      left: 3px;
+      bottom: -142px;
+      min-width: 294px;
+    }
 
     &:focus-visible:not(:hover, :active) {
       border-color: $color-dark-primary;
